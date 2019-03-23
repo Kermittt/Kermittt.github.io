@@ -35,17 +35,17 @@
 				var weaponPowerAverage = (weaponPower2 + weaponPower3 + weaponPower4) / 3;
 				
 				var totalPowerAverage = (heroPower2 + heroPower3 + heroPower4 + weaponPower2 + weaponPower3 + weaponPower4) / 6;
-				var playerPower = Math.floor(totalPowerAverage / 10);
+				var playerPower = totalPowerAverage / 10;
 				
 				setFormValue("heroPowerAverage", parseFloat((heroPowerAverage).toFixed(2)));
 				setFormValue("weaponPowerAverage", parseFloat((weaponPowerAverage).toFixed(2)));
 				setFormValue("totalPowerAverage", parseFloat((totalPowerAverage).toFixed(2)));
-				setFormValue("playerPower", playerPower);
+				setFormValue("playerPower", Math.floor(playerPower));
 				
 				var i;
 				var easyMissionRanges = [];
 				for (i = -2; i <= 2; i++) {
-					easyMissionRanges.push(playerPower + i);
+					easyMissionRanges.push(Math.floor(playerPower + i - 0.5));
 				}
 				setFormValue("easyMissionRange", easyMissionRanges.join(", "));
 				setFormValue("hardMissionRange", easyMissionRanges[4] + 1 + "+");
