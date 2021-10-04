@@ -27,14 +27,16 @@
 				var heroPower2 = getFormValue("heroPower2");
 				var heroPower3 = getFormValue("heroPower3");
 				var heroPower4 = getFormValue("heroPower4");
-				var heroPowerAverage = (heroPower2 + heroPower3 + heroPower4) / 3;
+				var heroPower5 = getFormValue("heroPower5");
+				var heroPowerAverage = (heroPower2 + heroPower3 + heroPower4 + heroPower5) / 4;
 				
 				var weaponPower2 = getFormValue("weaponPower2");
 				var weaponPower3 = getFormValue("weaponPower3");
 				var weaponPower4 = getFormValue("weaponPower4");
-				var weaponPowerAverage = (weaponPower2 + weaponPower3 + weaponPower4) / 3;
+				var weaponPower5 = getFormValue("weaponPower5");
+				var weaponPowerAverage = (weaponPower2 + weaponPower3 + weaponPower4 + weaponPower5) / 4;
 				
-				var totalPowerAverage = (heroPower2 + heroPower3 + heroPower4 + weaponPower2 + weaponPower3 + weaponPower4) / 6;
+				var totalPowerAverage = (heroPower2 + heroPower3 + heroPower4 + heroPower5 + weaponPower2 + weaponPower3 + weaponPower4 + weaponPower5) / 8;
 				var playerPower = (totalPowerAverage / 10) - 0.5;
 				
 				setFormValue("heroPowerAverage", parseFloat((heroPowerAverage).toFixed(2)));
@@ -77,6 +79,7 @@
 					<th class="thin">Top 2</th>
 					<th class="thin">Top 3</th>
 					<th class="thin">Top 4</th>
+					<th class="thin">Top 5</th>
 					<th class="thin">Average</th>
 				</tr>
 				<tr>
@@ -85,6 +88,7 @@
 					<td><input class="thin" type="text" id="heroPower2"></td>
 					<td><input class="thin" type="text" id="heroPower3"></td>
 					<td><input class="thin" type="text" id="heroPower4"></td>
+					<td><input class="thin" type="text" id="heroPower5"></td>
 					<td><input class="thin" type="text" id="heroPowerAverage" disabled></td>
 				</tr>
 				<tr>
@@ -93,15 +97,16 @@
 					<td><input class="thin" type="text" id="weaponPower2"></td>
 					<td><input class="thin" type="text" id="weaponPower3"></td>
 					<td><input class="thin" type="text" id="weaponPower4"></td>
+					<td><input class="thin" type="text" id="weaponPower5"></td>
 					<td><input class="thin" type="text" id="weaponPowerAverage" disabled></td>
 				</tr>
 				<tr>
-					<td colspan="4"></td>
+					<td colspan="5"></td>
 					<th align="right">Total</th>
 					<td><input class="thin" type="text" id="totalPowerAverage" disabled></td>
 				</tr>
 				<tr>
-					<td colspan="4"></td>
+					<td colspan="5"></td>
 					<th align="right">Player Power</th>
 					<td><input class="thin large red" type="text" id="playerPower" disabled></td>
 				</tr>
@@ -117,7 +122,7 @@
 					<th align="right">Mission Range</th>
 					<td class="wide" colspan="2"><input class="wide large" type="text" id="easyMissionRange" disabled></td>
 					<td class="wide" colspan="2"><input class="wide large" type="text" id="hardMissionRange" disabled></td>
-					<td align="right"><button type="button" onclick="calculatePlayerPower()">Calculate</button></td>
+					<td align="right" colspan="2"><button type="button" onclick="calculatePlayerPower()">Calculate</button></td>
 				</tr>
 			</table>
 		</form>
